@@ -33,7 +33,7 @@ def chat_bot():
         if user_input.lower() == 'quit':
             break
 
-        best_match: str | None = find_best_match(user_input, [q["question"] for q in knowledge_base["questions"]])
+        best_match: Optional[str] = find_best_match(user_input, [q["question"] for q in knowledge_base["questions"]])
         
         if best_match:
             answer: str = get_answer_for_question(best_match, knowledge_base)
